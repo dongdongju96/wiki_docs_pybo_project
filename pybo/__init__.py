@@ -20,9 +20,11 @@ def create_app():
     migrate.init_app(app,db)
     from . import models
     # blueprint
-    from .views import main_views, question_views
+    from .views import main_views, question_views, answer_view
+
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
+    app.register_blueprint(answer_view.bp)
     #
     # @app.route('/')
     # def hello_pybo():
